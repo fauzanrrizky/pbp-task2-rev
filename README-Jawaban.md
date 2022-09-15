@@ -22,4 +22,4 @@ pada sistem operasi yang digunakan.
        secrets di github, dan lakukan deployment
 
 4. Link aplikasi Heroku
-https://pbp-tugas2-fauzan.herokuapp.com/katalog/
+https://pbp-task2-rev.herokuapp.com/katalog/
