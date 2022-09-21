@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 1,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Shawshank Redemprion" ,
+            "rating": 4.2,
+            "release_date": "September 1994",
+            "review": "Bagus banget menceritakan tentang orang yang kabur dari penjara karena kesabaran dan ketekunannya" 
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 2,
+        "fields": {
+            "watched": "Sudah",
+            "title": "The Godfather" ,
+            "rating": 4.2,
+            "release_date": "Maret 1972",
+            "review": "Menceritakan tentang bisnis dan kehidupan keluarga dari keluarga kriminal"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 3,
+        "fields": {
+            "watched": "Sudah",
+            "title": "The Dark Knight" ,
+            "rating": 4.0,
+            "release_date": "Juli 2008",
+            "review": "Asik, kisah tentang batman yang dibantu seorang polisi untuk mengalahkan joker"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 4,
+        "fields": {
+            "watched": "Belum",
+            "title": "The Lord of the Rings : The Return of the King" ,
+            "rating": 3.9,
+            "release_date": "Januari 2004",
+            "review": "Menceritakan tentang petualangan dan pertempuran terakhir dari penjaga cincin."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 5,
+        "fields": {
+            "watched": "Belum",
+            "title": "Pulp Fiction" ,
+            "rating": 3.8,
+            "release_date": "Oktober 1994",
+            "review": "Di dunia kriminal bawah tanah, serangkaian insiden akhirnya menghubungkan kehidupan antara dua mafia Los Angeles, istri seorang gangster, seorang petinju dan dua penjahat kelas teri."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 6,
+        "fields": {
+            "watched": "Belum",
+            "title": "Forrest Gump" ,
+            "rating": 3.8,
+            "release_date": "Juli 1994",
+            "review": "pria ber IQ rendah - namun baik hati, bergabung dengan tentara untuk mengabdi. Namun, benaknya seolah tidak bisa berhenti memikirkan sang kekasih masa kecilnya, Jenny Curran."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 7,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Fight Club" ,
+            "rating": 3.7,
+            "release_date": "November 1999",
+            "review": "Sulit tidur dan bosan dengan rutinitasnya, seorang pekerja kantoran membentuk sebuah klub pertarungan terlarang bersama rekannya."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 8,
+        "fields": {
+            "watched": "Belum",
+            "title": "The Matrix" ,
+            "rating": 3.7,
+            "release_date": "Juli 1999",
+            "review": "Seorang programer komputer dan hacker jahat, dipimpin untuk melawan perang bawah tanah melawan komputer kuat yang kini menguasai dunia."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 9,
+        "fields": {
+            "watched": "Belum",
+            "title": "Goodfellas" ,
+            "rating": 3.7,
+            "release_date": "September 1990",
+            "review": "film kejahatan Amerika Serikat tahun 1990 yang disutradarai oleh Martin Scorsese. Ini adalah film adaptasi dari buku non-fiksi berjudul Wiseguy karya Nicholas Pileggi"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 10,
+        "fields": {
+            "watched": "Sudah",
+            "title": "Top Gun: Maverick" ,
+            "rating": 3.5,
+            "release_date": "Mei 2022",
+            "review": "Pilot pesawat tempur hebat yang sudah mengabdi lebih dari 30 tahun kini kembali mengajar pilot-pilot muda untuk menjalani misi berbahaya."
+        }
+    }
+]
