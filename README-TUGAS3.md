@@ -37,6 +37,12 @@
     6. Melakukan deployment ke HEROKU
         -> Push local repository yang sudah diupdate ke github, repository github untuk tugas pbp sudah otomatis terhubung dengan heroku.
 
+
+4. Screenshot Postman
+![]('../../Screenshots/postman_html.png?')
+![]('../../Screenshots/postman_json.png?')
+![]('../../Screenshots/postman_xml.png?')
+
 LINK MENUJU HEROKU:
 1. https://pbp-task2-rev.herokuapp.com/mywatchlist/html
 2. https://pbp-task2-rev.herokuapp.com/mywatchlist/xml
