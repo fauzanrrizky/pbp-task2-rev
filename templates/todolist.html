@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Halaman Awal TodoList</title>
+{% endblock meta %}
+
+{% block content %}
+<h4>User : {{username}}</h4>
+
+<table>
+    <tr>
+    <th>Tanggal Pembuatan Task</th>
+    <th>Judul Task</th>
+    <th>Deskripsi</th>
+    <th>Status</th>
+    <th>Option</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+
+    {% for todolist in data %}
+    <tr>
+        <th>{{todolist.date}}</th>
+        <th>{{todolist.title}}</th>
+        <th>{{todolist.description}}</th>
+
+        <th>
+            {% if todolist.is_finished %}
+            Finished 
+            {% else %}
+            Not Yet
+            {%endif%}
+        </th>
+        <th>
+        {% comment %} Menambahkan tombol untuk remove data {% endcomment %}
+        <button><a href="{% url 'todolist:remove_task' todolist.id %}">Remove</a></button>
+
+        {% comment %} Menambahkan tombol untuk change status {% endcomment %}
+        <button><a href="{% url 'todolist:change_task' todolist.id %}">Change Status</a></button>
+    </th>
+    </tr>
+    
+{% endfor %}
+
+</table>
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+{% comment %} Menambahkan tombol untuk pindah ke laman create-task {% endcomment %}
+<button><a href="{% url 'todolist:create_task' %}">Tambah Task</a></button>
+
+
+{% endblock content %}
