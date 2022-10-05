@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Login</title>
+<meta charset="UTF-8">
+{% endblock meta %}
+
+{% block content %}
+
+<!-- Menambahkan bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<style>
+
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #a79e84;
+
+        background-image: url("https://media.istockphoto.com/photos/close-up-retro-plain-white-color-cement-wall-background-texture-for-picture-id1313659762?b=1&k=20&m=1313659762&s=170667a&w=0&h=1So2rsBP-G3UN0rZbwVbYZVfbhNjDztakkB7nJvCOjw=");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+    }
+
+    .login {
+        width: auto;
+        height: min-content;
+        padding: 20px;
+        border-radius: 12px;
+        background: #d4d1c0;
+    }
+
+    .login form {
+        font-size: 20px;
+    }
+
+    .login form input[type="submit"] {
+        margin-top: 4px;
+    }
+
+    .login form .form-control {
+        margin-top: 4px;
+        margin-left: 4px;
+        background: white;
+        
+    }
+
+    .login-button {
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-left: 150px;
+        /* padding: 12px 19px; */
+        background-color: #DCCABB ;
+        color: black;
+        text-align: center;
+    }
+
+    input.login-button:hover{
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-left: 150px;
+        /* padding: 12px 19px; */
+        background-color: #c88a58 ;
+        color: black;
+        text-align: center;
+    }
+
+</style>
+
+
+<body>
+
+    <div class = "login">
+
+        <h1>Welcome Back 🤠</h1>
+        <br>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username </td>
+                    <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                </tr>
+                        
+                <tr>
+                    <td>Password  </td>
+                    <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <!-- <td><input class="col-md-12 bg-gradient text-right" type="submit" value="Login"></td> -->
+                    <td><input class="login-button" type="submit" value="Login"></td>
+                </tr>
+            </table>
+        </form>
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}     
+            
+        Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+
+    </div>
+</body>
+
+{% endblock content %}
