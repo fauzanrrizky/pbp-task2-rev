@@ -1,0 +1,27 @@
+Link HEroku todolis:
+https://pbp-task2-rev.herokuapp.com/todolist/
+https://pbp-task2-rev.herokuapp.com/todolist/todolist_ajax
+
+
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+    a. Asynchronous programming (concurrent programming): Sebuah program dapat melakukan banyak tugas pada saat yang bersamaan. Ketika fungsi asinkron dipanggil, baris kode berikutnya dapat dieksekusi tanpa menunggu fungsi selesai.
+
+    b. Synchronous programming (sequential programming): Program dijalankan secara berurutan. Saat tugas sedang dijalankan, instruksi yang menjalankan tugas lain diblokir. Tugas pertama harus diselesaikan sebelum tugas berikutnya dapat dilakukan.
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma Event-Driven Programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+-> Paradigma Event-Driven Programming artinya menjalankan program berdasarkan peristiwa yang ada. Pemrograman yang diterapkan secara event driving bergantung pada event, sehingga dengan menerapkan konsep pemrograman asinkronus, aliran program dapat dieksekusi secara tidak berurutan. Sebagai implementasi dari event-driven programming, ketika tombol create di click, maka akan dijalankan fungsi untuk buat create task. Fungsi ini akan selalu dipanggil jika terdapat event (click)
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+-> Ketika event terjadi, event tersebut akan menjalankan fungsi AJAX. Misalnya ketika klik button create di form untuk membuat task baru, maka akan dilakukan AJAX POST untuk mengirim data ke server. Lalu setelah server selesai mengolah data, akan dipanggil callback function yang sudah dibuat sebelumnya. Data yang ditangkap lalu dikirim ke server tanpa melalui reload di web sehingga akan lebih cepat
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+AJAX GET
+views.py: Menambahkan fungsi untuk mengambil task sesuai user login dalam bentuk JSON
+urls.py : melakukan routing path.
+Lalu ketika website telah selesai load, AJAX GET terpanggil untuk mendapatkan task JSON dan dimasukkan ke masing2 cards
+
+AJAX POST
+views.py: Menambahkan fungsi add_task_modal
+urls.py: melakukan routing path
+Di fungction juga diterapkan asynchronus programming sehingga task akan update tanpa perlu reload website

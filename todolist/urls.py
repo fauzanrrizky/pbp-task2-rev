@@ -15,6 +15,9 @@ from todolist.views import create_task
 from todolist.views import remove_task
 from todolist.views import status_task
 
+# Tugas 6
+from todolist.views import request_json,add_task_modal,todolist_ajax
+
 app_name = 'todolist'
 
 urlpatterns = [
@@ -25,4 +28,8 @@ urlpatterns = [
     path('create-task/', create_task, name='create_task'),
     path('remove/<int:id>', remove_task, name='remove_task'),
     path('status/<int:id>', status_task, name='change_task'),
+
+    path('json/', request_json, name='show_json'), # Tugas 6 Nambahin JSON  
+    path('add/', add_task_modal, name='add_task'),
+    path('todolist_ajax/', todolist_ajax, name='todolist_ajax'),
 ]

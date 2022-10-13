@@ -26,6 +26,11 @@ from todolist.forms import ToDoListForm
 # Import models
 from todolist.models import ToDoList
 
+from django.http import HttpResponse
+from django.core import serializers
+
+from django.http import JsonResponse, HttpResponseBadRequest
+
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
@@ -37,6 +42,16 @@ def show_todolist(request):
     }
     return render(request, "todolist.html",context)
 
+# Fungsi untuk show todolist ajax (LAB 6)
+@login_required(login_url='/todolist/login/')
+def todolist_ajax(request):
+    ajax_todolist = ToDoList.objects.filter(user=request.user)
+    context = {
+    'ajax_todolist' : ajax_todolist,
+    'username' :  request.user.username,
+    'last_login': request.COOKIES['last_login'],
+    }
+    return render(request, "todolist_ajax.html", context)
 
 
 # Fungsi untuk create task
@@ -93,9 +108,30 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
+
 # Fungsi logout
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+@login_required(login_url='/todolist/login/')
+# Membuat sebuah fungsi yang menerima parameter request (JSON)
+def request_json(request):
+    data = ToDoList.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+
+
+
+# CREATE TASK MODAL
+def add_task_modal(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        date = datetime.datetime.now()
+        user = request.user
+        ToDoList.objects.create(title=title, description=description, date=date, user=user)
+         
+        return HttpResponse(b"CREATED", status=201)
